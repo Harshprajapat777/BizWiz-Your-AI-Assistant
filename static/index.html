@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizWiz - AI Assistance & Support</title>
+    <title>BizWiz-AI Assistance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -387,26 +387,8 @@
                 <div class="message-icon">
                     <i class="fas fa-robot"></i>
                 </div>
-                <p>Hello! I'm BizWiz, your AI assistant. I'm here to help with business insights, data analysis, strategy planning, and any support you need. How can I assist you today?</p>
+                <p>Hello! I'm BizWiz, your AI assistant for TechNova Solutions. I can help you with information about our company, services, products like NovaAI, NovaFlow, NovaSecure, and NovaStack, contact details, careers, and more. How can I assist you today?</p>
                 <div class="message-time">Just now</div>
-            </div>
-
-            <!-- Example user message -->
-            <div class="message user-message">
-                <div class="message-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <p>Can you help me analyze our Q3 sales data?</p>
-                <div class="message-time">2 min ago</div>
-            </div>
-
-            <!-- Example bot response -->
-            <div class="message bot-message">
-                <div class="message-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <p>Absolutely! I can help you analyze Q3 sales data. Please upload your dataset or describe what specific metrics you'd like to examine. I can provide trends, comparisons, and predictive insights.</p>
-                <div class="message-time">1 min ago</div>
             </div>
         </div>
 
@@ -416,6 +398,31 @@
             <div class="typing-dot"></div>
             <div class="typing-dot"></div>
         </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <div class="input-wrapper">
+                <input type="text" class="chat-input" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-action-btn" data-action="services">
+                    <i class="fas fa-cogs"></i> Services
+                </button>
+                <button class="quick-action-btn" data-action="products">
+                    <i class="fas fa-box"></i> Products
+                </button>
+                <button class="quick-action-btn" data-action="contact">
+                    <i class="fas fa-phone"></i> Contact
+                </button>
+                <button class="quick-action-btn" data-action="careers">
+                    <i class="fas fa-briefcase"></i> Careers
+                </button>
+            </div>
+        </div>
+
         <!-- Footer -->
         <footer class="chat-footer">
             <p>BizWiz AI Assistant • Secure & Encrypted • v2.1</p>
@@ -430,29 +437,23 @@
             const sendButton = document.getElementById('sendButton');
             const typingIndicator = document.getElementById('typingIndicator');
             const quickActionButtons = document.querySelectorAll('.quick-action-btn');
-            
-            // Sample bot responses for demonstration
-            const botResponses = [
-                "I can help you with that. Based on your query, I recommend analyzing the data trends from the last quarter to identify key growth opportunities.",
-                "Excellent question! For optimal results, I suggest reviewing your KPIs and comparing them with industry benchmarks.",
-                "I understand you need support with that. Let me access the relevant data and provide you with actionable insights.",
-                "Based on my analysis, there are three key strategies we could implement to improve performance in that area.",
-                "I've processed your request. Here's a detailed breakdown with visualizations and recommendations for next steps."
-            ];
-            
+
+            // Generate a unique session ID for conversation memory
+            const sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
             // Quick action queries
             const quickActions = {
-                sales: "Can you analyze our recent sales performance and identify key trends?",
-                strategy: "What business strategy would you recommend for entering a new market?",
-                report: "Generate a comprehensive business performance report for the last quarter.",
-                support: "I need technical support with integrating the new CRM system."
+                services: "What services does TechNova Solutions offer?",
+                products: "Tell me about the products like NovaAI, NovaFlow, and NovaSecure.",
+                contact: "How can I contact TechNova Solutions support team?",
+                careers: "What career opportunities are available at TechNova?"
             };
-            
+
             // Function to add a message to the chat
             function addMessage(message, isUser = false) {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-                
+
                 const iconClass = isUser ? 'fa-user' : 'fa-robot';
                 messageDiv.innerHTML = `
                     <div class="message-icon">
@@ -461,93 +462,100 @@
                     <p>${message}</p>
                     <div class="message-time">${getCurrentTime()}</div>
                 `;
-                
+
                 chatMessages.appendChild(messageDiv);
                 scrollToBottom();
             }
-            
+
             // Function to get current time in HH:MM format
             function getCurrentTime() {
                 const now = new Date();
                 return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
             }
-            
-            // Function to simulate bot thinking and response
-            function simulateBotResponse(userQuery) {
+
+            // Function to get bot response from backend API
+            async function getBotResponse(userQuery) {
                 // Show typing indicator
                 typingIndicator.style.display = 'flex';
-                
-                // Hide typing indicator after a random delay (simulating thinking time)
-                const thinkingTime = 1000 + Math.random() * 2000;
-                
-                setTimeout(() => {
+                scrollToBottom();
+
+                try {
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: userQuery,
+                            session_id: sessionId
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    // Hide typing indicator
                     typingIndicator.style.display = 'none';
-                    
-                    // Select a random response from the botResponses array
-                    const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-                    addMessage(randomResponse, false);
-                }, thinkingTime);
+
+                    if (data.success) {
+                        addMessage(data.response, false);
+                    } else {
+                        addMessage("I apologize, but I encountered an error processing your request. Please try again.", false);
+                        console.error('API Error:', data.error);
+                    }
+                } catch (error) {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+                    addMessage("I'm having trouble connecting to the server. Please make sure the backend is running.", false);
+                    console.error('Fetch Error:', error);
+                }
             }
-            
+
             // Function to handle sending a message
             function sendMessage() {
                 const message = userInput.value.trim();
-                
+
                 if (message === '') return;
-                
+
                 // Add user message to chat
                 addMessage(message, true);
-                
+
                 // Clear input field
                 userInput.value = '';
-                
-                // Simulate bot response after a short delay
-                setTimeout(() => {
-                    simulateBotResponse(message);
-                }, 500);
+
+                // Get bot response from API
+                getBotResponse(message);
             }
-            
+
             // Function to scroll to the bottom of the chat
             function scrollToBottom() {
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-            
+
             // Event Listeners
             sendButton.addEventListener('click', sendMessage);
-            
+
             userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     sendMessage();
                 }
             });
-            
+
             // Add event listeners to quick action buttons
             quickActionButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const action = this.getAttribute('data-action');
                     const query = quickActions[action];
-                    
+
                     if (query) {
                         // Add quick action query as user message
                         addMessage(query, true);
-                        
-                        // Simulate bot response after a short delay
-                        setTimeout(() => {
-                            simulateBotResponse(query);
-                        }, 500);
+
+                        // Get bot response from API
+                        getBotResponse(query);
                     }
                 });
             });
-            
-            // Add some initial messages to make the chat look active
-            setTimeout(() => {
-                addMessage("I'd also like to get insights on customer feedback from the last product launch.", true);
-                
-                setTimeout(() => {
-                    simulateBotResponse("customer feedback");
-                }, 1000);
-            }, 2000);
-            
+
             // Initial scroll to bottom
             scrollToBottom();
         });
