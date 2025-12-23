@@ -1,0 +1,214 @@
+TechNova Solutions Pvt Ltd - Company Data
+[ABOUT THE COMPANY]
+TechNova Solutions Pvt Ltd is a product and service-based technology company that focuses on building modern, scalable, and intelligent digital solutions for global clients.
+Founded in 2015 and headquartered in Rāvu, Madhya Pradesh, India, the company has grown from a small engineering-driven startup into a multi-location organization with offices in Rāvu, Bangalore, and Delhi, along with a strong remote workforce across India and other countries.
+TechNova combines the stability and maturity of a services organization with the innovation and speed of a product company.
+This dual nature allows TechNova to create robust in-house software products while also delivering highly customized technology solutions for enterprises, startups, and mid-sized businesses.
+
+The company builds and maintains a suite of proprietary products, including:
+
+NovaAI, an enterprise AI and machine learning platform that supports natural language processing, computer vision, recommendation systems, and predictive analytics for multiple industries.
+
+NovaFlow, a no-code workflow automation platform that lets business teams design, automate, and monitor complex business processes without heavy engineering involvement.
+
+NovaSecure, a zero-trust cybersecurity and compliance solution that provides real-time threat detection, identity management, and security analytics for cloud-native and hybrid environments.
+
+NovaStack, a full-stack application framework with opinionated patterns and tooling that accelerates the development of web and mobile applications.
+
+In addition to products, TechNova runs dedicated service verticals for software development, cloud engineering, data engineering, and digital transformation.
+The organization follows Agile/Scrum practices, with most projects organized into two-week sprints, daily standups, sprint reviews, and retrospectives.
+TechNova works with clients from industries such as healthcare, fintech, e-commerce, agriculture technology, logistics, and education technology.
+Many of its clients use both TechNova’s SaaS products and its engineering services in combination, which enables smoother integrations, faster delivery times, and more stable long-term partnerships.
+
+TechNova emphasizes engineering quality, documentation, security-by-design, and observability from the first day of development.
+The teams use modern development stacks such as React, Angular, Vue.js, Node.js, Python, Java Spring, .NET Core, and Go, along with cloud platforms like AWS, Azure, and Google Cloud Platform.
+For AI/ML work, TechNova engineers use frameworks like TensorFlow, PyTorch, scikit-learn, and Hugging Face transformers, and they frequently work on projects involving recommendation engines, chatbots, computer vision, and language understanding systems for enterprise use cases.
+
+The culture at TechNova is described as engineering-first, transparent, and growth-oriented.
+Employees are encouraged to contribute to open-source projects, write technical blogs, speak at community events, and continuously learn new technologies.
+Internally, the company runs regular tech talks, brown-bag sessions, and hackathons focused on DevOps automation, AI tools, and developer productivity improvements.
+
+[SERVICES OFFERED]
+TechNova Solutions offers a broad range of technology services designed to support clients through the entire lifecycle of digital product development and IT modernization.
+Its service catalog is flexible and can be tailored to a small MVP for a startup or a large, multi-year transformation initiative for an enterprise.
+
+Custom Software Development
+TechNova provides end-to-end custom software development for web, mobile, and backend systems.
+Engagements typically begin with requirements workshops, architecture design sessions, and proof-of-concept development.
+The engineering teams work with modern frontend frameworks such as React, Angular, and Vue, and backend stacks including Node.js, Python (Django/Flask/FastAPI), Java Spring Boot, and .NET Core.
+Projects often include microservices architecture, REST and GraphQL APIs, real-time communication using WebSockets, and integrations with third-party platforms like payment gateways, CRM systems, and ERP solutions.
+
+AI and Machine Learning Solutions
+The AI/ML services team focuses on solving real-world business problems using data.
+This includes building recommendation engines, churn prediction models, risk scoring systems, fraud detection, intelligent document processing, and generative AI assistants for internal teams.
+TechNova also offers custom LLM fine-tuning, model evaluation, prompt engineering support, and deployment pipelines for models running on GPUs or optimized CPU environments.
+
+Cloud Engineering and DevOps
+TechNova helps organizations migrate, modernize, and operate their applications in the cloud.
+The company works extensively with AWS, Microsoft Azure, and Google Cloud, designing scalable architectures, implementing containerization with Docker, and orchestrating workloads with Kubernetes.
+DevOps engineers at TechNova set up CI/CD pipelines using GitHub Actions, GitLab CI, Jenkins, and other automation tools.
+They also implement infrastructure as code using Terraform and CloudFormation, as well as monitoring and observability using tools like Prometheus, Grafana, ELK (Elasticsearch, Logstash, Kibana), and cloud-native monitoring suites.
+
+Digital Transformation and Modernization
+Many clients engage TechNova to modernize legacy applications written in outdated technologies.
+The company supports domain discovery, decomposing monoliths into microservices, designing API-first architectures, and replatforming applications from on-premise data centers to cloud environments.
+TechNova also helps clients adopt low-code/no-code platforms where appropriate, enabling business users to build internal tools faster while maintaining security and governance.
+
+Quality Assurance and Testing
+The QA team at TechNova is responsible for manual testing, automated testing, performance testing, and security testing.
+They design test strategies that incorporate unit tests, integration tests, end-to-end tests, and regression suites.
+Common tools include Cypress, Playwright, Selenium, JMeter, and various security testing frameworks.
+For performance-sensitive systems, TechNova runs load tests that simulate thousands of concurrent users and monitors system behavior to identify bottlenecks and optimization opportunities.
+
+Managed IT and Support Services
+TechNova offers managed services for clients who want long-term operational support.
+This can include 24/7 infrastructure monitoring, incident management, backup and disaster recovery, patch management, and managed security operations.
+Clients can choose different support tiers, from basic business-hours support to full round-the-clock coverage with defined response and resolution times.
+
+UI/UX Design and Product Strategy
+Product and design teams at TechNova help clients with user research, persona creation, information architecture, interaction design, visual design, and usability testing.
+They create Figma-based design systems, reusable component libraries, and design tokens that can be implemented consistently across multiple products.
+
+[CONTACT AND SUPPORT INFORMATION]
+TechNova Solutions provides multiple channels for users, customers, candidates, and partners to reach the right team quickly.
+The company encourages the use of email and ticket-based communication for traceability, but also offers phone support and live chat during specific hours.
+
+General Support
+
+Support email: support@technova.in
+
+Primary support phone: +91-755-401-2345
+
+Emergency support phone: +91-755-401-2346
+
+Support ticket portal: https://technova.in/support/tickets
+
+Live chat: Available on https://technova.in/chat for logged-in customers
+
+Sales and Business Inquiries
+
+Sales email: sales@technova.in
+
+Sales phone: +91-755-401-2347
+
+Demo request form: https://technova.in/demo-request
+
+Partnership and reseller queries: partner@technova.in
+
+Human Resources and Careers
+
+HR Manager: Priya Sharma
+
+HR email: hr@technova.in
+
+HR phone: +91-755-401-2348
+
+Careers portal: https://technova.in/careers
+Job seekers can browse open positions in full-stack engineering, AI/ML, DevOps, QA, product management, and design.
+The HR team also handles internship applications for students and fresh graduates who want to gain experience in real-world projects and product development.
+
+Administration and Facilities
+
+Admin email: admin@technova.in
+
+Admin phone: +91-755-401-2349
+
+Corporate office address: Building A, Tech Park, Rāvu, Madhya Pradesh 462001, India
+
+Executive and Leadership Contact
+
+Chief Executive Officer: Rahul Verma
+
+CEO email: ceo@technova.in
+
+Executive assistant email: ea.ceo@technova.in
+Public relations teams and strategic partners typically reach out to the CEO’s office for media interviews, strategic collaborations, and high-level partnership discussions.
+
+[WORKING HOURS AND SHIFT POLICY]
+TechNova Solutions operates with a flexible work policy that supports both global clients and employee work-life balance.
+Instead of rigid 9-to-5 schedules, the company uses rotation-based shifts aligned with Indian Standard Time (IST) and Greenwich Mean Time (GMT).
+
+Standard Workload
+Employees are expected to work an average of 6 to 7 hours per day, depending on project demands and shift assignments.
+The organization emphasizes output and ownership over clocking long hours, so teams focus on delivering milestones, resolving incidents, and collaborating effectively within their chosen shift.
+
+Shift Structure
+To provide near 24/7 coverage for clients in Asia, Europe, and parts of North America, TechNova has defined multiple shifts:
+
+Shift A – Morning IST:
+Typical timings: 6:00 AM to 1:00 PM IST
+This shift primarily covers early-morning client interactions, deployments during low-traffic hours, and coordination with Asia-Pacific clients.
+
+Shift B – Day IST:
+Typical timings: 9:00 AM to 4:00 PM IST
+This is the most common shift, aligning with standard business hours in India.
+Most internal meetings, sprint ceremonies, and cross-functional sync-ups are scheduled during this window.
+
+Shift C – Evening IST:
+Typical timings: 2:00 PM to 9:00 PM IST
+This shift is suited for teams collaborating with European and early US time zones.
+It also supports production releases scheduled later in the Indian workday.
+
+Shift D – Night IST / GMT-aligned:
+Typical timings: 10:00 PM to 5:00 AM IST (approximately 12:30 PM to 7:30 PM GMT)
+This shift is used for projects that require real-time collaboration with clients in Europe and early US Eastern time zones, as well as for 24/7 support teams and critical incident response.
+
+Rotation Policy
+Most engineering and support teams follow a weekly rotation in which employees may rotate between shifts depending on project and client needs.
+For example, a team might assign members to Shift B and Shift C for one week, and then move some members to Shift A or Shift D in the next week.
+The rotation is planned in advance and communicated through internal scheduling tools so that employees can plan their personal commitments.
+
+Core Hours
+Regardless of shift, TechNova maintains a set of core collaboration hours where overlap is expected.
+Typically, 10:00 AM to 4:00 PM IST is treated as a core window where key meetings, cross-team discussions, and decision-making sessions are scheduled.
+Employees working in earlier or later shifts adjust their start or end times to ensure they can attend necessary core-hour meetings.
+
+Remote and Hybrid Work
+TechNova allows a mix of remote, hybrid, and on-site work depending on role and project.
+Roughly 40 percent of the workforce works fully remote, while others come to the office for 2–3 days a week or as required for client demos, training sessions, and team-building events.
+
+[FAQ AND GENERAL INFORMATION]
+Below are some frequently asked questions that users, clients, and candidates might ask about TechNova Solutions.
+This section is written as continuous informational content so that an LLM can extract relevant answers without needing a strict Q&A structure.
+
+Project Duration and Engagement Models
+Typical software development projects at TechNova run anywhere from three to six months for a minimum viable product, and longer for complex enterprise systems or multi-phase digital transformation initiatives.
+For shorter engagements, the company offers fixed-scope, fixed-price models where deliverables are clearly defined.
+For evolving or research-heavy projects, TechNova prefers time-and-materials or dedicated team models, where capacity is allocated and priorities can be adjusted sprint by sprint.
+
+Technology Stack and Expertise
+TechNova has strong expertise in frontend frameworks like React, Angular, and Vue, along with native and cross-platform mobile development using Kotlin, Swift, and React Native or Flutter.
+On the backend, teams work with Node.js, Python, Java, .NET, and Go, selected based on performance, ecosystem, and client preferences.
+Databases commonly used include PostgreSQL, MySQL, MongoDB, Redis, and cloud-native databases and data warehouses.
+For AI and data projects, the company uses tools such as TensorFlow, PyTorch, Hugging Face, Apache Spark, Kafka, Airflow, and other data pipeline technologies.
+
+Development Process and Quality Practices
+The development process is strongly influenced by Agile and DevOps principles.
+Most teams follow two-week sprints with clearly defined goals, daily standup meetings, sprint planning sessions, demos, and retrospectives.
+Code reviews are mandatory, and all production changes go through automated test suites and CI/CD pipelines before deployment.
+Security is treated as a core requirement rather than an afterthought, with threat modeling and secure coding practices built into the process.
+
+Careers and Hiring
+People often ask how they can join TechNova as engineers, designers, or managers.
+The typical hiring process includes an initial screening, one or more technical interviews, and a culture fit or behavioral interview.
+Candidates are encouraged to apply through the careers portal or send their resume to the HR email address.
+Internships are also available for students who are interested in learning modern software development practices on real-world projects.
+
+Remote Work and Flexibility
+TechNova supports remote work across multiple locations and time zones, and many roles are open to fully remote arrangements.
+Remote employees collaborate using tools like Slack, Microsoft Teams, Zoom, Jira, Confluence, GitHub, and GitLab.
+The shift-based model and focus on core hours help distributed teams stay aligned while still giving individuals flexibility in their daily schedules.
+
+Products and Open Source
+While TechNova’s primary products like NovaAI, NovaFlow, NovaSecure, and NovaStack are offered as commercial SaaS or licensed solutions, the company also maintains several open-source libraries and developer tools.
+These projects typically focus on developer productivity, observability utilities, integration helpers, SDKs, and templates that benefit both internal teams and the wider developer community.
+
+Billing, Pricing, and Payment Terms
+For services, TechNova usually structures payments as a combination of upfront deposits, milestone-based payments, and final delivery payments.
+For SaaS products, billing can be monthly or annual, with volume-based pricing tiers according to number of users, API calls, or data volume.
+Enterprise customers can negotiate custom contracts that include SLAs, dedicated support, and compliance requirements.
+
+Support and Service Levels
+Support plans range from standard business-hours support to premium 24/7 coverage with defined response times for critical, high, medium, and low-severity incidents.
+Customers raising tickets through the portal can track their status, communicate with support engineers, and access knowledge base articles that address common issues and configuration questions.
+
