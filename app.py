@@ -1,6 +1,7 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, Response
 from flask_cors import CORS
 import os
+import json
 from dotenv import load_dotenv
 
 # LangChain imports
@@ -118,6 +119,56 @@ try to help generally but mention that you specialize in TechNova Solutions info
     return response, docs
 
 
+def stream_rag_response(question: str, session_id: str):
+    """Stream response from RAG pipeline with memory"""
+
+    # Get retriever
+    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+
+    # Get relevant documents
+    docs = retriever.invoke(question)
+    context = format_docs(docs)
+
+    # Get chat history
+    history = get_chat_history(session_id)
+
+    # Create prompt template (same as non-streaming)
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", """You are BizWiz, an AI assistant for TechNova Solutions Pvt Ltd.
+You help users with information about the company, its services, products, contact details, and general inquiries.
+Be helpful, professional, and friendly. If you don't know the answer based on the context, say so politely.
+
+Context from company knowledge base:
+{context}
+
+Use the above context to answer the user's question. If the question is not related to the context,
+try to help generally but mention that you specialize in TechNova Solutions information."""),
+        MessagesPlaceholder(variable_name="chat_history"),
+        ("human", "{question}")
+    ])
+
+    # Create LLM with streaming enabled
+    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7, streaming=True)
+
+    # Create chain
+    chain = prompt | llm | StrOutputParser()
+
+    # Collect full response for history
+    full_response = ""
+
+    # Stream the response
+    for chunk in chain.stream({
+        "context": context,
+        "chat_history": history,
+        "question": question
+    }):
+        full_response += chunk
+        yield chunk
+
+    # Add to history after streaming completes
+    add_to_history(session_id, question, full_response)
+
+
 def initialize_rag():
     """Initialize the RAG pipeline"""
     global vectorstore
@@ -169,6 +220,42 @@ def chat():
 
     except Exception as e:
         print(f"Error in chat endpoint: {str(e)}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/chat/stream', methods=['POST'])
+def chat_stream():
+    """Handle streaming chat requests"""
+    try:
+        data = request.json
+        user_message = data.get('message', '').strip()
+        session_id = data.get('session_id', 'default')
+
+        if not user_message:
+            return jsonify({'success': False, 'error': 'Message is required'}), 400
+
+        def generate():
+            try:
+                for chunk in stream_rag_response(user_message, session_id):
+                    # Send each chunk as SSE data
+                    yield f"data: {json.dumps({'chunk': chunk})}\n\n"
+                # Send done signal
+                yield f"data: {json.dumps({'done': True})}\n\n"
+            except Exception as e:
+                yield f"data: {json.dumps({'error': str(e)})}\n\n"
+
+        return Response(
+            generate(),
+            mimetype='text/event-stream',
+            headers={
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+                'X-Accel-Buffering': 'no'
+            }
+        )
+
+    except Exception as e:
+        print(f"Error in stream endpoint: {str(e)}")
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
